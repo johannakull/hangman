@@ -47,7 +47,8 @@ while "_" in display and lives > 0:
             print(hangman_art.stages[lives])
     
 if lives == 0:
-    print(f"You lost all your lives - Game Over!\nThe word was {random_word}.")
+    print(f"You lost all your lives - Game Over!")
+    print(f"The word was {random_word}.")
 else:
     print("Congratulations! You win.")
         

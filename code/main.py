@@ -32,13 +32,13 @@ while "_" in display and lives > 0:
                 letter = random_word[position]
                 if letter == guess:
                     display[position] = guess
-            print("\nCorrect!\n")
+            print("Correct!\n")
         else:
             lives -= 1
             if lives > 1:
-                print(f"\nSorry, {guess} is incorrect - you lose a life. You now have {lives} lives left.\n")
+                print(f"Sorry, {guess} is incorrect - you lose a life. You now have {lives} lives left.\n")
             elif lives == 1:
-                print(f"\nSorry, {guess} is incorrect - you lose a life. You now have {lives} life left.\n")
+                print(f"Sorry, {guess} is incorrect - you lose a life. You now have {lives} life left.\n")
             else:
                 print()
 
@@ -50,5 +50,5 @@ while "_" in display and lives > 0:
 if lives == 0:
     print(f"You lost all your lives - Game Over! The word was {random_word}.")
 else:
-    print("\nCongratulations! You win.")
+    print("Congratulations! You win.")
         

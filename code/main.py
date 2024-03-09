@@ -11,7 +11,7 @@ display = []
 guessed_letters = []
 
 print("\nWELCOME TO HANGMAN\n")
-print(f"Try to guess the following word! You have {lives} lives.\n")
+print(f"Try to guess the word! You have {lives} lives.\n")
 
 for _ in random_word:
     display += ("_")
@@ -33,6 +33,7 @@ while "_" in display and lives > 0:
                 if letter == guess:
                     display[position] = guess
             print("Correct!\n")
+            print(*display, sep=" ")
         else:
             lives -= 1
             if lives > 1:
@@ -40,15 +41,13 @@ while "_" in display and lives > 0:
             elif lives == 1:
                 print(f"Sorry, {guess} is incorrect - you lose a life. You now have {lives} life left.\n")
             else:
-                print()
+                print(f"Sorry, {guess} is incorrect.\n")
 
+            print(*display, sep=" ")
             print(hangman_art.stages[lives])
     
-        if lives > 0:
-            print(*display, sep=" ")
-
 if lives == 0:
-    print(f"You lost all your lives - Game Over! The word was {random_word}.")
+    print(f"You lost all your lives - Game Over!\nThe word was {random_word}.")
 else:
     print("Congratulations! You win.")
         

@@ -1,7 +1,7 @@
 import random
+import hangman_words
 
-word_list = ["automobile", "banana", "caramel"]
-random_word = random.choice(word_list).upper()
+random_word = random.choice(hangman_words.word_list).upper()
 word_length = len(random_word)
 
 lives = 6
@@ -38,7 +38,7 @@ while "_" in display and lives > 0:
     print(*display, sep=" ")
 
 if lives == 0:
-    print("\nYou lost the game. Try again.")
+    print(f"\nYou lost all your lives - Game Over! The word was {random_word}.")
 else:
     print("\nCongratulations! You win.")
         

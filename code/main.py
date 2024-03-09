@@ -2,19 +2,24 @@ import random
 
 word_list = ["automobile", "banana", "caramel"]
 
-chosen_word = random.choice(word_list)
-print(chosen_word)
+random_word = random.choice(word_list)
+print(random_word)
 
 display = []
-for letter in chosen_word:
+
+for letter in random_word:
   display.append("_")
 
+print("Here's your word!")
 print(display)
 
 guess = input("Guess a letter: ").lower()
 
-for letter in chosen_word:
+letter_index = 0
+
+for letter in random_word:
     if letter == guess:
-        print("yes")
-    else:
-        print("no")
+        display[letter_index] = letter
+    letter_index += 1
+
+print(display)

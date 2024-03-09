@@ -20,12 +20,12 @@ print(*display, sep=" ")
 print()
 
 while "_" in display and lives > 0:
-    guess = input("\nGuess a letter: ").upper()
+    guess = input("\nGuess a letter: ").upper() # TO DO: handle user entering multiple letters
 
     if guess in guessed_letters:
         print(f"You already guessed the letter {guess}. Try a different one.")
     else:
-        guessed_letters += guess
+        guessed_letters.append(guess)
 
         if guess in random_word:
             for position in range(word_length):

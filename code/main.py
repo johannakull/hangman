@@ -1,15 +1,16 @@
 import random
 import hangman_words
+import hangman_art
 
 random_word = random.choice(hangman_words.word_list).upper()
 word_length = len(random_word)
 
-lives = 6
+lives = 7
 
 display = []
 
-print("WELCOME TO HANGMAN\n")
-print("Try to guess the following word! You have 6 lives.\n")
+print("\nWELCOME TO HANGMAN\n")
+print(f"Try to guess the following word! You have {lives} lives.\n")
 
 for _ in random_word:
     display += ("_")
@@ -34,12 +35,14 @@ while "_" in display and lives > 0:
             print(f"\nSorry, {guess} is incorrect - you lose a life. You now have {lives} life left.\n")
         else:
             print()
+
+        print(hangman_art.stages[lives])
     
-    print(*display, sep=" ")
+    if lives > 0:
+        print(*display, sep=" ")
 
 if lives == 0:
-    print(f"\nYou lost all your lives - Game Over! The word was {random_word}.")
+    print(f"You lost all your lives - Game Over! The word was {random_word}.")
 else:
     print("\nCongratulations! You win.")
         
-

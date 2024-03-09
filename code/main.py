@@ -3,11 +3,11 @@ import random
 word_list = ["automobile", "banana", "caramel"]
 
 random_word = random.choice(word_list)
-print(random_word)
+print(random_word) # for debugging
 
 display = []
 
-for letter in random_word:
+for _ in random_word:
   display.append("_")
 
 print("Here's your word!")
@@ -15,11 +15,11 @@ print(display)
 
 guess = input("Guess a letter: ").lower()
 
-letter_index = 0
+word_length = len(random_word)
 
-for letter in random_word:
+for position in range(word_length):
+    letter = random_word[position]
     if letter == guess:
-        display[letter_index] = letter
-    letter_index += 1
+       display[position] = guess
 
 print(display)

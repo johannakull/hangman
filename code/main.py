@@ -8,7 +8,7 @@ print(random_word) # for debugging
 display = []
 
 for _ in random_word:
-  display.append("_")
+    display += ("_")
 
 print("Here's your word!")
 print(display)
